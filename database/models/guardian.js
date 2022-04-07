@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Guardian.belongsToMany(models.Guardian_student,{
+        through: 'Guardian_students',
+        as : 'guardian_student',
+        foreignKey : 'guardian_id'
+      })
     }
   }
   Guardian.init({

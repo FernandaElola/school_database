@@ -18,7 +18,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       grade_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: "Grades"
+          },
+          key : 'id'
+        }
       },      
       deletedAt: {
         type: Sequelize.DATE

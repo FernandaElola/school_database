@@ -10,7 +10,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Exam_result.hasMany(models.Course,{
+        as: 'courses',
+        foreignKey: 'course_id'
+      }),
+      Exam_result.hasMany(models.Student,{
+        as: 'students',
+        foreignKey: 'student_id'
+      }),
+      Exam_result.hasMany(models.Exam,{
+        as: 'exam_result',
+        foreignKey: 'exam_result_id'
+      })
     }
   }
   Exam_result.init({
@@ -21,7 +32,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Exam_result',
-    paranoid: true
+    paranoid: true,
+    timestamps: false
   });
   return Exam_result;
 };

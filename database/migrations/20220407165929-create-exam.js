@@ -10,7 +10,13 @@ module.exports = {
       },
       exam_type: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: "Exam_types"
+          },
+          key : 'id'
+        }
       },
       name: {
         allowNull: false,

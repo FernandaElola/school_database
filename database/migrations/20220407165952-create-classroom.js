@@ -14,7 +14,13 @@ module.exports = {
       },
       grade_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: "Grades"
+          },
+          key : 'id'
+        }
       },
       section: {
         type: Sequelize.STRING
@@ -27,7 +33,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       teacher_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: "Teachers"
+          },
+          key : 'id'
+        }
       },      
       deletedAt: {
         type: Sequelize.DATE

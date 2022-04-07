@@ -10,7 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Guardian_student.hasMany(models.Student,{
+        as: 'student_guardian',
+        foreignKey: 'student_id'
+      }),
+      Guardian_student.hasMany(models.Guardian,{
+        as: 'guardian_student',
+        foreignKey: 'guardian_id'
+      })
     }
   }
   Guardian_student.init({
@@ -19,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Guardian_student',
+    timestamps: false
   });
   return Guardian_student;
 };

@@ -14,7 +14,13 @@ module.exports = {
       },
       student_id: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: "Students"
+          },
+          key : 'id'
+        }
       },
       status: {
         allowNull: false,
