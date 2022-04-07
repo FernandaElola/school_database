@@ -9,16 +9,25 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       student_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       status: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       remark: {
         type: Sequelize.TEXT
+      },      
+      deletedAt: {
+        type: Sequelize.DATE
+      },      
+      deletedAt: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

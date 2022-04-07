@@ -9,15 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       first_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       last_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
       },
       password: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       phone: {
@@ -27,9 +32,13 @@ module.exports = {
         type: Sequelize.DATE
       },
       status: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       last_login_date: {
+        type: Sequelize.DATE
+      },      
+      deletedAt: {
         type: Sequelize.DATE
       },
       createdAt: {

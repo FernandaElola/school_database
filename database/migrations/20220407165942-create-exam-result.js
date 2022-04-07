@@ -19,6 +19,9 @@ module.exports = {
       },
       marks: {
         type: Sequelize.STRING
+      },      
+      deletedAt: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

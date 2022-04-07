@@ -9,15 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       year: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       grade_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       section: {
         type: Sequelize.STRING
       },
       status: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       remarks: {
@@ -25,6 +28,9 @@ module.exports = {
       },
       teacher_id: {
         type: Sequelize.INTEGER
+      },      
+      deletedAt: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

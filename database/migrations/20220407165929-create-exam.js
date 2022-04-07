@@ -9,12 +9,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       exam_type: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       start_date: {
+        type: Sequelize.DATE
+      },      
+      deletedAt: {
         type: Sequelize.DATE
       },
       createdAt: {
